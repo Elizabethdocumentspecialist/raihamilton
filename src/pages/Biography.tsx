@@ -101,7 +101,7 @@ export default function Biography() {
               <img
                 src={raiPortrait}
                 alt="Alexander (Rai) Hamilton"
-                className="w-full object-cover grayscale contrast-110"
+                className="w-full object-cover"
               />
               <div className="mt-6 space-y-3 border-t border-border pt-6">
                 {[
