@@ -83,7 +83,8 @@
     @apply bg-background text-foreground;
     font-family: 'Public Sans', sans-serif;
     font-weight: 400;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -92,10 +93,13 @@
     font-family: 'Instrument Serif', serif;
     letter-spacing: -0.02em;
     text-wrap: balance;
+    color: hsl(var(--foreground));
   }
 
-  .font-mono, code, pre {
-    font-family: 'JetBrains Mono', monospace;
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: hsl(var(--muted-foreground));
   }
 }
 
