@@ -99,7 +99,11 @@
   p {
     font-size: 1rem;
     line-height: 1.8;
-    color: hsl(var(--muted-foreground));
+     color: hsl(var(--muted-foreground));
+  }
+
+  .font-mono, code, pre {
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
