@@ -8,9 +8,7 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       colors: {
@@ -57,33 +55,61 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Extended tokens
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          dim: "hsl(var(--gold-dim))",
+        },
+        platinum: "hsl(var(--platinum))",
+        charcoal: "hsl(var(--charcoal))",
+        slate: "hsl(var(--slate))",
+      },
+      fontFamily: {
+        serif: ["Instrument Serif", "Georgia", "serif"],
+        sans: ["Public Sans", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "var(--radius)",
+        sm: "var(--radius)",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "reveal-mask": {
+          from: { clipPath: "inset(0 50% 0 50%)", opacity: "0" },
+          to: { clipPath: "inset(0 0% 0 0%)", opacity: "1" },
+        },
+        "pulse-gold": {
+          "0%, 100%": { opacity: "0.3" },
+          "50%": { opacity: "0.9" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "reveal-mask": "reveal-mask 1s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "pulse-gold": "pulse-gold 3s ease-in-out infinite",
+      },
+      transitionTimingFunction: {
+        hamilton: "cubic-bezier(0.16, 1, 0.3, 1)",
+      },
+      boxShadow: {
+        elegant: "0 20px 50px -12px rgba(0,0,0,0.5)",
+        card: "0 4px 24px -4px rgba(0,0,0,0.4)",
+        gold: "0 0 40px -10px hsl(38 45% 56% / 0.3)",
       },
     },
   },
