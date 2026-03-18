@@ -143,7 +143,7 @@ export default function Biography() {
                           <img
                             src={chapter.image}
                             alt={chapter.imageCaption}
-                            className="w-full object-cover max-h-80 grayscale contrast-110"
+                            className="w-full object-cover max-h-80"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                         </div>
