@@ -32,7 +32,7 @@
 
     /* Slate / editorial muted */
     --muted: 215 15% 10%;
-    --muted-foreground: 210 15% 55%;
+    --muted-foreground: 210 15% 72%;
 
     --accent: 38 45% 56%;
     --accent-foreground: 220 20% 4%;
@@ -83,7 +83,8 @@
     @apply bg-background text-foreground;
     font-family: 'Public Sans', sans-serif;
     font-weight: 400;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -92,6 +93,13 @@
     font-family: 'Instrument Serif', serif;
     letter-spacing: -0.02em;
     text-wrap: balance;
+    color: hsl(var(--foreground));
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+     color: hsl(var(--muted-foreground));
   }
 
   .font-mono, code, pre {

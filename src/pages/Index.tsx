@@ -246,7 +246,7 @@ export default function Home() {
               <img
                 src={raiPortrait}
                 alt="Alexander (Rai) Hamilton"
-                className="w-full max-w-sm object-cover grayscale contrast-125 brightness-90"
+                className="w-full max-w-sm object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
             </div>
