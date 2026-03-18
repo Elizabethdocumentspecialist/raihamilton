@@ -1,14 +1,283 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { motion } from "framer-motion";
+import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import SectionHeader from "@/components/SectionHeader";
+import WorldGrid from "@/components/WorldGrid";
+import FadeIn from "@/components/FadeIn";
+import raiPortrait from "@/assets/rai-portrait.png";
 
-const Index = () => {
+const easing = [0.16, 1, 0.3, 1];
+
+const impactMetrics = [
+  { value: "89,000", label: "Investors", sub: "Alexander Securities — Europe's Largest Share Dealer" },
+  { value: "5", label: "Novels", sub: "Geopolitical fiction exploring governance & global systems" },
+  { value: "40+", label: "Years", sub: "Cross-sector advisory spanning five continents" },
+  { value: "1M+", label: "Doses", sub: "SinoVac COVID-19 vaccinations deployed globally" },
+];
+
+const strategicAchievements = [
+  {
+    tag: "Finance",
+    title: "Alexander Securities",
+    body: "Founded and built Europe's largest share dealing firm with 89,000 private investors. Acquired eleven private client divisions of major stock-broking firms. Awarded the only multiple application licence from the London Stock Exchange.",
+    metric: "89,000 Investors",
+  },
+  {
+    tag: "Technology",
+    title: "Constellation 3D",
+    body: "Founded and served as CEO following recruitment of scientists from the Moscow Academy of Science and Lenin Institute to New York. Developed advanced 3D optical disc technology for next-generation data storage.",
+    metric: "NYSE Listed",
+  },
+  {
+    tag: "Conglomerate",
+    title: "Sistema — Russia",
+    body: "Appointed Business Development Director under Vladimir Yevtushenkov. Built the multi-billion-dollar communications infrastructure connecting all Russian-speaking territories through mobile and social media platforms.",
+    metric: "NYSE: MBT",
+  },
+  {
+    tag: "Defense",
+    title: "Pentagon Advisory",
+    body: "Long-standing history of sharing new technologies with the Joint Chiefs at the Pentagon, the Department of Defense, and Homeland Security — bridging advanced imaging, geophysical survey, and strategic intelligence.",
+    metric: "DoD · DHS",
+  },
+  {
+    tag: "Finance",
+    title: "Early Stage Capital",
+    body: "Funded approximately 107 early stage businesses including for James Goldsmith in the USA, Robert Stigwood in the UK and Bermuda, Kerry Packer in Australia, and Richard Branson — including £52 million to create Virgin Airways.",
+    metric: "£52M Virgin Airways",
+  },
+  {
+    tag: "Humanitarian",
+    title: "Planetary Green",
+    body: "Trustee of the Gates-sponsored Millennium Health Foundation — now Planetary Green — focused on environmental surveillance, carbon accountability via space satellite, and protection of global rainforest biodiversity.",
+    metric: "Charity No. 1119453",
+  },
+];
+
+const focusDomains = [
+  { icon: Satellite, label: "Satellite Imaging & Geophysical Mapping" },
+  { icon: Leaf, label: "Environmental Infrastructure & Climate Systems" },
+  { icon: TrendingUp, label: "Global Finance & Capital Markets" },
+  { icon: Brain, label: "Advanced AI & Diagnostic Technologies" },
+  { icon: Globe, label: "Geopolitical Strategy & Resource Economics" },
+  { icon: Shield, label: "Defense Technology & Aerospace Supply Chains" },
+  { icon: Zap, label: "Waste-to-Energy & Clean Technology" },
+  { icon: Users, label: "Humanitarian Healthcare Initiatives" },
+];
+
+export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
+
+      {/* ─── HERO ─────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        <WorldGrid />
+
+        {/* Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/20 pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: easing }}
+              className="mb-8"
+            >
+              <span className="font-mono text-[10px] text-gold/60 uppercase tracking-widest border border-gold/20 px-3 py-1">
+                BRIEFING_DOC_01 // EXECUTIVE PROFILE
+              </span>
+            </motion.div>
+
+            <motion.h1
+              className="font-serif text-5xl md:text-7xl lg:text-8xl text-foreground mb-6 leading-none"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: easing }}
+            >
+              Alexander<br />
+              <span className="text-gold">(Rai)</span><br />
+              Hamilton
+            </motion.h1>
+
+            <motion.p
+              className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground mb-6 border-l-2 border-gold/40 pl-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: easing }}
+            >
+              Architect of Global Systems &nbsp;·&nbsp; Advisor to Sovereign Interests
+            </motion.p>
+
+            <motion.p
+              className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: easing }}
+            >
+              Advising across global finance, advanced technologies, environmental systems,
+              and strategic infrastructure development. Four decades of systemic impact
+              across five continents.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9, ease: easing }}
+            >
+              <Link to="/biography" className="btn-ghost-gold">
+                View Full Briefing <ArrowRight size={12} />
+              </Link>
+              <Link to="/initiatives" className="btn-ghost-gold" style={{ borderColor: "hsl(var(--border))", color: "hsl(var(--muted-foreground))" }}>
+                Examine Initiatives <ArrowRight size={12} />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+        >
+          <span className="font-mono text-[8px] text-muted-foreground/40 uppercase tracking-widest">Scroll</span>
+          <motion.div
+            className="w-px h-8 bg-gradient-to-b from-gold/40 to-transparent"
+            animate={{ scaleY: [1, 0.3, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </motion.div>
+      </section>
+
+      {/* ─── STRATEGIC IMPACT LEDGER ──────────────────────────────── */}
+      <section className="py-24 border-y border-border bg-charcoal">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-border">
+            {impactMetrics.map((m, i) => (
+              <FadeIn key={i} delay={i * 0.1} className="px-8 py-4 first:pl-0 last:pr-0">
+                <div className="font-mono text-[9px] text-gold/50 uppercase tracking-widest mb-2">
+                  Metric_{String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="font-serif text-4xl md:text-5xl text-foreground mb-1">{m.value}</div>
+                <div className="font-mono text-[10px] text-gold uppercase tracking-widest mb-2">{m.label}</div>
+                <div className="text-xs text-muted-foreground leading-snug">{m.sub}</div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── STRATEGIC ACHIEVEMENTS ───────────────────────────────── */}
+      <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
+        <FadeIn>
+          <SectionHeader number="SECTION_02" title="STRATEGIC LEDGER" />
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+          {strategicAchievements.map((item, i) => (
+            <FadeIn key={i} delay={i * 0.08}>
+              <div className="dossier-card bg-background p-8 h-full group hover:bg-card transition-colors duration-500">
+                <div className="flex items-start justify-between mb-5">
+                  <span className="font-mono text-[9px] text-gold/60 uppercase tracking-widest border border-gold/20 px-2 py-0.5">
+                    {item.tag}
+                  </span>
+                  <span className="font-mono text-[9px] text-muted-foreground/40 uppercase tracking-widest">
+                    {item.metric}
+                  </span>
+                </div>
+                <h3 className="font-serif text-xl text-foreground mb-3">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── GLOBAL STRATEGIC FOCUS ───────────────────────────────── */}
+      <section className="py-32 bg-muted">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <FadeIn>
+            <SectionHeader number="SECTION_03" title="STRATEGIC FOCUS" />
+          </FadeIn>
+          <FadeIn delay={0.1} className="mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground max-w-2xl">
+              Domains of<br />
+              <span className="text-gold">Strategic Engagement</span>
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {focusDomains.map((domain, i) => {
+              const Icon = domain.icon;
+              return (
+                <FadeIn key={i} delay={i * 0.07}>
+                  <div className="group border border-border p-6 hover:border-gold/40 transition-all duration-500 ease-hamilton">
+                    <div className="mb-4">
+                      <span className="font-mono text-[8px] text-muted-foreground/40 uppercase tracking-widest">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <Icon size={18} className="text-gold/50 mb-4 group-hover:text-gold transition-colors duration-300" />
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-snug">
+                      {domain.label}
+                    </p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PORTRAIT / TEASER ────────────────────────────────────── */}
+      <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <FadeIn direction="left">
+            <div className="relative">
+              <div className="absolute -inset-px border border-gold/20" />
+              <div className="absolute -inset-3 border border-gold/5" />
+              <img
+                src={raiPortrait}
+                alt="Alexander (Rai) Hamilton"
+                className="w-full max-w-sm object-cover grayscale contrast-125 brightness-90"
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="right" delay={0.2}>
+            <div className="space-y-6">
+              <SectionHeader number="SECTION_04" title="EXECUTIVE PROFILE" />
+              <h2 className="font-serif text-4xl text-foreground leading-tight">
+                A Career Built<br />on Systemic Thinking
+              </h2>
+              <div className="gold-rule w-12" />
+              <p className="text-muted-foreground leading-relaxed">
+                From building Europe's largest securities firm to advising Russia's largest conglomerate,
+                from Pentagon briefings to rainforest conservation — Alexander (Rai) Hamilton has spent
+                four decades operating at the intersection where capital, technology, and geopolitical
+                necessity converge.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                As an author of five geopolitical novels and former political editor of <em>Cercle</em> magazine,
+                he brings an analyst's precision and a writer's clarity to every strategic engagement.
+              </p>
+              <Link to="/biography" className="btn-ghost-gold inline-flex">
+                Examine Full Biography <ArrowRight size={12} />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
-};
-
-export default Index;
+}
