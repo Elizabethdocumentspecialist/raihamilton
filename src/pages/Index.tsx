@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -7,6 +7,8 @@ import SectionHeader from "@/components/SectionHeader";
 import WorldGrid from "@/components/WorldGrid";
 import FadeIn from "@/components/FadeIn";
 import raiPortrait from "@/assets/rai-portrait.png";
+import waltonCastle from "@/assets/walton-castle.jpg";
+import raiBhutan from "@/assets/rai-bhutan.jpg";
 
 const easing = [0.16, 1, 0.3, 1];
 
@@ -76,7 +78,6 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <WorldGrid />
 
-        {/* Vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/20 pointer-events-none" />
 
@@ -140,7 +141,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
@@ -174,10 +174,144 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── WALTON CASTLE FEATURE ────────────────────────────────── */}
+      <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
+        <FadeIn>
+          <SectionHeader number="SECTION_02" title="HEADQUARTERS" />
+        </FadeIn>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <FadeIn direction="left" delay={0.1}>
+            <div className="relative">
+              <div className="absolute -inset-px border border-gold/20" />
+              <img
+                src={waltonCastle}
+                alt="Walton Castle — Planetary Green Headquarters"
+                className="w-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
+              <div className="absolute top-4 left-4">
+                <span className="font-mono text-[8px] text-gold/80 uppercase tracking-widest border border-gold/40 bg-background/80 backdrop-blur-sm px-2 py-1">
+                  Planetary Green HQ
+                </span>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="right" delay={0.2}>
+            <div className="space-y-6">
+              <h2 className="font-serif text-4xl text-foreground leading-tight">
+                Walton Castle<br />
+                <span className="text-gold">Global Humanitarian Hub</span>
+              </h2>
+              <div className="gold-rule w-12" />
+              <p className="text-muted-foreground leading-relaxed">
+                A 17th-century luxury castle serving as the operational headquarters of Planetary Green —
+                attracting global leaders in science, business, and government for humanitarian conferences,
+                diplomatic engagements, and high-level strategic discussions.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The Castle hosts charity galas, international fundraising events, cultural festivals, and
+                private leadership briefings — with event bookings confirmed through to 2028. Recognized in
+                international press as a leading luxury and humanitarian event destination.
+              </p>
+              <div className="grid grid-cols-3 gap-4 border-t border-border pt-6">
+                {[
+                  { value: "17th C.", label: "Heritage Venue" },
+                  { value: "2028", label: "Bookings To" },
+                  { value: "Global", label: "Leadership Hub" },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <div className="font-serif text-2xl text-gold">{item.value}</div>
+                    <div className="font-mono text-[8px] text-muted-foreground/50 uppercase tracking-widest">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+              <Link to="/walton-castle" className="btn-ghost-gold inline-flex">
+                Explore the Castle <ArrowRight size={12} />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ─── BHUTAN HUMANITARIAN CREDIBILITY ─────────────────────── */}
+      <section className="py-32 bg-muted">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <FadeIn>
+            <SectionHeader number="SECTION_03" title="GLOBAL HUMANITARIAN LEADERSHIP" />
+          </FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <FadeIn direction="left" delay={0.1}>
+              <div className="space-y-6">
+                <div className="font-mono text-[9px] text-gold/60 uppercase tracking-widest border border-gold/20 inline-block px-3 py-1">
+                  Strategic Engagement · Decade-Long Relationship
+                </div>
+                <h2 className="font-serif text-4xl text-foreground leading-tight">
+                  Strategic Engagement with<br />
+                  <span className="text-gold">Bhutan's Most Influential</span><br />
+                  Humanitarian Leader
+                </h2>
+                <div className="gold-rule w-12" />
+                <p className="text-muted-foreground leading-relaxed">
+                  Alexander (Rai) Hamilton has maintained a long-standing advisory relationship with
+                  <strong className="text-foreground"> Ashi Dorji Wangmo Wangchuck</strong> — founder of the
+                  Tarayana Foundation, dedicated to supporting rural communities, poverty alleviation, and
+                  sustainable development across Bhutan.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Recognized as historically one of the most influential women in the transition of Bhutan,
+                  Ashi Dorji Wangmo Wangchuck has been central to the nation's humanitarian evolution.
+                  This engagement represents over a decade of advisory-level collaboration with Bhutan's
+                  leadership ecosystem and direct involvement in humanitarian development programming.
+                </p>
+                <div className="border border-border bg-background p-6 space-y-3">
+                  <div className="font-mono text-[8px] text-gold/50 uppercase tracking-widest">
+                    Humanitarian Focus Areas
+                  </div>
+                  {[
+                    "Rural Community Support & Poverty Alleviation",
+                    "Sustainable Development Programming",
+                    "Advisory-Level Government Engagement",
+                    "Cross-Border Humanitarian Networks",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <div className="w-1 h-1 rounded-full bg-gold/60 flex-shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={0.2}>
+              <figure className="space-y-4">
+                <div className="relative border border-gold/20 overflow-hidden">
+                  <img
+                    src={raiBhutan}
+                    alt="Alexander (Rai) Hamilton with Ashi Dorji Wangmo Wangchuck"
+                    className="w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                  <div className="absolute top-4 right-4">
+                    <span className="font-mono text-[8px] text-gold/70 uppercase tracking-widest border border-gold/30 bg-background/80 backdrop-blur-sm px-2 py-1">
+                      Bhutan · Strategic Engagement
+                    </span>
+                  </div>
+                </div>
+                <figcaption className="font-mono text-[9px] text-muted-foreground/50 uppercase tracking-widest leading-relaxed">
+                  Engagement with Ashi Dorji Wangmo Wangchuck — advancing rural development and
+                  humanitarian impact in Bhutan. Relationship spanning over a decade of advisory collaboration.
+                </figcaption>
+              </figure>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ─── STRATEGIC ACHIEVEMENTS ───────────────────────────────── */}
       <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
         <FadeIn>
-          <SectionHeader number="SECTION_02" title="STRATEGIC LEDGER" />
+          <SectionHeader number="SECTION_04" title="STRATEGIC LEDGER" />
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
@@ -204,7 +338,7 @@ export default function Home() {
       <section className="py-32 bg-muted">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <FadeIn>
-            <SectionHeader number="SECTION_03" title="STRATEGIC FOCUS" />
+            <SectionHeader number="SECTION_05" title="STRATEGIC FOCUS" />
           </FadeIn>
           <FadeIn delay={0.1} className="mb-16">
             <h2 className="font-serif text-4xl md:text-5xl text-foreground max-w-2xl">
@@ -254,7 +388,7 @@ export default function Home() {
 
           <FadeIn direction="right" delay={0.2}>
             <div className="space-y-6">
-              <SectionHeader number="SECTION_04" title="EXECUTIVE PROFILE" />
+              <SectionHeader number="SECTION_06" title="EXECUTIVE PROFILE" />
               <h2 className="font-serif text-4xl text-foreground leading-tight">
                 A Career Built<br />on Systemic Thinking
               </h2>

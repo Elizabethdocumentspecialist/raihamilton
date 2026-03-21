@@ -7,6 +7,7 @@ const navItems = [
   { label: "Overview", path: "/" },
   { label: "Biography", path: "/biography" },
   { label: "Initiatives", path: "/initiatives" },
+  { label: "Walton Castle", path: "/walton-castle" },
   { label: "Publications", path: "/publications" },
   { label: "Advisory", path: "/advisory" },
 ];
@@ -44,7 +45,7 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -58,7 +59,7 @@ export default function Navigation() {
               {item.label}
             </Link>
           ))}
-          <Link to="/advisory" className="btn-ghost-gold ml-4">
+          <Link to="/advisory" className="btn-ghost-gold ml-2">
             Advisory Inquiry
           </Link>
         </nav>
