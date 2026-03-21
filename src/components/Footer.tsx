@@ -12,11 +12,11 @@ const footerNav = [
     ],
   },
   {
-    heading: "Protocol",
+    heading: "Locations",
     links: [
+      { label: "Walton Castle HQ", path: "/walton-castle" },
       { label: "Advisory Services", path: "/advisory" },
       { label: "Speaking Engagements", path: "/advisory#speaking" },
-      { label: "Research Partnerships", path: "/advisory#research" },
       { label: "Inquiry Form", path: "/advisory#contact" },
     ],
   },
@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin size={10} className="text-gold/50" />
               <span className="font-mono text-[9px] uppercase tracking-widest text-gold/40">
-                London · Riyadh · New York · Dhaka
+                London · Walton Castle · Riyadh · Dhaka
               </span>
             </div>
           </div>
@@ -88,6 +88,10 @@ export default function Footer() {
               <li>
                 <span className="font-mono text-[9px] text-muted-foreground/50 uppercase tracking-wider block mb-0.5">Research Affiliation</span>
                 Gates Foundation — Grand Challenges
+              </li>
+              <li>
+                <span className="font-mono text-[9px] text-muted-foreground/50 uppercase tracking-wider block mb-0.5">Headquarters</span>
+                Walton Castle, Somerset
               </li>
               <li className="pt-2">
                 <span className="font-mono text-[9px] text-gold/40 uppercase tracking-widest">Current Node // London</span>
