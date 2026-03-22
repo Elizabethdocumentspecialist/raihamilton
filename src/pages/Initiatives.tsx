@@ -300,7 +300,7 @@ export default function Initiatives() {
                         <img
                           src={tctImage}
                           alt="Bill Bailey and Rai Hamilton at Teenage Cancer Trust South West appeal launch, Walton Castle"
-                          className="w-full object-cover max-h-64"
+                          className="w-full object-contain bg-black/5"
                         />
                         <figcaption className="px-4 py-3 font-mono text-[8px] text-muted-foreground/50 uppercase tracking-widest bg-card">
                           Above: Bill Bailey and Rai Hamilton · Below: Igraine, Rai and Margarita Hamilton — TCT South West Appeal Launch, Walton Castle
