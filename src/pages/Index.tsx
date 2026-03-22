@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users, ExternalLink } from "lucide-react";
+import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users, ExternalLink, Building2, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,6 +9,7 @@ import FadeIn from "@/components/FadeIn";
 import raiPortrait from "@/assets/rai-portrait.png";
 import waltonCastle from "@/assets/walton-castle.jpg";
 import raiBhutan from "@/assets/rai-bhutan.jpg";
+import tctImage from "@/assets/tct-walton-castle.jpg";
 
 const easing = [0.16, 1, 0.3, 1];
 
@@ -55,6 +56,18 @@ const strategicAchievements = [
     title: "Planetary Green",
     body: "Trustee of the Gates-sponsored Millennium Health Foundation — now Planetary Green — focused on environmental surveillance, carbon accountability via space satellite, and protection of global rainforest biodiversity.",
     metric: "Charity No. 1119453",
+  },
+  {
+    tag: "ESG / Materials",
+    title: "Basalt Innovation",
+    body: "Led a two-year collaboration with Georgian patent holders and German industrial partners to advance basalt as a next-generation construction material — delivering zero CO₂ emissions, superior strength, and reduced cost versus steel.",
+    metric: "Zero CO₂ vs Steel",
+  },
+  {
+    tag: "Philanthropy",
+    title: "Teenage Cancer Trust",
+    body: "Ongoing support for the Teenage Cancer Trust, including hosting the South West appeal launch at Walton Castle. Advocates for specialist care units ensuring young patients with advanced cancer are not placed in general wards.",
+    metric: "TCT · Walton Castle",
   },
 ];
 
@@ -370,6 +383,87 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── ESG & PHILANTHROPY ───────────────────────────────────── */}
+      <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
+        <FadeIn>
+          <SectionHeader number="SECTION_06" title="ESG · PHILANTHROPY · SOCIAL IMPACT" />
+        </FadeIn>
+        <FadeIn delay={0.1} className="mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground max-w-3xl">
+            Sustainable Materials,<br />
+            <span className="text-gold">Infrastructure & Charitable Leadership</span>
+          </h2>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Basalt / ESG block */}
+          <FadeIn direction="left" delay={0.1}>
+            <div className="border border-border p-8 h-full space-y-5 hover:border-gold/30 transition-colors duration-500">
+              <div className="flex items-center gap-3">
+                <Building2 size={16} className="text-gold/60" />
+                <span className="font-mono text-[9px] text-gold/60 uppercase tracking-widest">ESG · Materials Innovation</span>
+              </div>
+              <h3 className="font-serif text-2xl text-foreground">Basalt — Next-Generation Construction Material</h3>
+              <div className="gold-rule w-8" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Led a two-year R&D collaboration with Georgian patent holders and German industrial partners to develop basalt fibre as a commercially viable alternative to steel — delivering superior tensile strength, corrosion resistance, and <strong className="text-foreground">zero CO₂ emissions</strong> versus conventional steel production.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                The initiative gained particular strategic relevance following the 2020 Turkish earthquake, which exposed the catastrophic consequences of inadequate construction standards. Basalt's structural advantages directly address these regulatory and safety shortfalls. The material was also positioned as a transformative solution for US steel industry decarbonisation, aligned with global ESG and climate frameworks.
+              </p>
+              <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">
+                {[
+                  { value: "Zero", label: "CO₂ vs Steel" },
+                  { value: "2yr", label: "R&D Period" },
+                  { value: "Global", label: "ESG Alignment" },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <div className="font-serif text-xl text-gold">{item.value}</div>
+                    <div className="font-mono text-[8px] text-muted-foreground/50 uppercase tracking-widest mt-0.5">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Teenage Cancer Trust block */}
+          <FadeIn direction="right" delay={0.2}>
+            <div className="border border-border p-8 h-full space-y-5 hover:border-gold/30 transition-colors duration-500">
+              <div className="flex items-center gap-3">
+                <Heart size={16} className="text-gold/60" />
+                <span className="font-mono text-[9px] text-gold/60 uppercase tracking-widest">Philanthropy · Healthcare Advocacy</span>
+              </div>
+              <h3 className="font-serif text-2xl text-foreground">Teenage Cancer Trust</h3>
+              <div className="gold-rule w-8" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Hamilton has provided continuous support to the Teenage Cancer Trust, advocating that teenagers with advanced-stage cancer receive specialist care in dedicated units — not placed in general wards alongside the elderly. Walton Castle has served as a fundraising venue for major TCT appeal events.
+              </p>
+              <figure className="border border-border overflow-hidden">
+                <img
+                  src={tctImage}
+                  alt="Bill Bailey and Rai Hamilton at the Teenage Cancer Trust South West appeal launch at Walton Castle"
+                  className="w-full object-cover max-h-52"
+                />
+                <figcaption className="px-4 py-2 font-mono text-[8px] text-muted-foreground/50 uppercase tracking-widest bg-card">
+                  Above: Bill Bailey & Rai Hamilton · TCT South West Appeal Launch, Walton Castle — raising £1M for Bristol specialist unit
+                </figcaption>
+              </figure>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Communication note */}
+        <FadeIn delay={0.3} className="mt-12">
+          <div className="border-l-2 border-gold/30 pl-6 py-2">
+            <p className="font-mono text-[10px] text-gold/50 uppercase tracking-widest mb-1">Communication Protocol</p>
+            <p className="text-sm text-muted-foreground">
+              Hamilton prefers structured, document-based communication to ensure clarity, accuracy, and alignment across all stakeholder engagements.
+              All formal inquiries should be submitted in writing via the <Link to="/advisory" className="text-gold/80 hover:text-gold underline underline-offset-2 transition-colors">Advisory inquiry form</Link>.
+            </p>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* ─── PORTRAIT / TEASER ────────────────────────────────────── */}
       <section className="py-32 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -388,7 +482,7 @@ export default function Home() {
 
           <FadeIn direction="right" delay={0.2}>
             <div className="space-y-6">
-              <SectionHeader number="SECTION_06" title="EXECUTIVE PROFILE" />
+              <SectionHeader number="SECTION_07" title="EXECUTIVE PROFILE" />
               <h2 className="font-serif text-4xl text-foreground leading-tight">
                 A Career Built<br />on Systemic Thinking
               </h2>

@@ -2,8 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, Zap, Shield, Leaf, Globe, Satellite, BarChart3 } from "lucide-react";
+import { ArrowRight, Zap, Shield, Leaf, Globe, Satellite, BarChart3, Building2, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import tctImage from "@/assets/tct-walton-castle.jpg";
 
 const initiatives = [
   {
@@ -144,6 +145,51 @@ The AI diagnostics initiative, documented in Hamilton's January 2026 research pa
       { value: "2026", label: "Research Published" },
     ],
   },
+  {
+    id: "08",
+    icon: Building2,
+    name: "Basalt — Sustainable Construction",
+    sector: "Green Materials · ESG · Infrastructure",
+    status: "Active",
+    location: "Georgia · Germany · Global",
+    headline: "High-performance basalt as a next-generation alternative to steel — superior strength, lower cost, and zero CO₂ emissions.",
+    impact: "Construction sector decarbonisation aligned with global ESG and climate frameworks.",
+    body: `Hamilton contributed a pivotal role in advancing basalt as a commercially viable next-generation construction material — positioning it as a high-performance alternative to traditional steel with transformative environmental and economic advantages.
+
+Basalt fibre and basalt-composite materials deliver enhanced tensile strength and corrosion resistance at reduced cost, while eliminating the substantial CO₂ emissions associated with conventional steel production. The implications for global ESG targets and infrastructure development are significant: the construction sector accounts for approximately 8% of global CO₂ emissions from steel alone.
+
+A two-year international collaboration was led with Georgian patent holders — the originating source of the basalt extrusion technology — and German industrial partners specialising in advanced extrusion processes and boiler systems for basalt production. This work supported the industrial scalability required for commercial deployment and resulted in a comprehensive construction industry report advocating for the adoption of low-carbon materials.
+
+The initiative gained strategic relevance following the 2020 Turkish earthquake, where analysis highlighted the critical impact of inadequate construction standards and the absence of urban safety regulations — factors directly addressed by basalt's superior structural integrity. The technology was also presented in the context of US steel industry transformation, demonstrating a pathway to large-scale infrastructure development with zero CO₂ emission impact — a material advantage for both commercial and regulatory compliance.`,
+    metrics: [
+      { value: "Zero", label: "CO₂ vs Steel" },
+      { value: "2yr", label: "R&D Collaboration" },
+      { value: "ESG", label: "Aligned Material" },
+    ],
+  },
+  {
+    id: "09",
+    icon: Heart,
+    name: "Teenage Cancer Trust — Philanthropy",
+    sector: "Charity · Healthcare · Social Impact",
+    status: "Active",
+    location: "Walton Castle · Bristol",
+    charity: "Ongoing Support",
+    headline: "Ongoing advocacy and event-based fundraising to ensure specialist cancer care for young patients — not general wards.",
+    impact: "Dignity, specialist support, and improved outcomes for teenagers with advanced-stage cancer.",
+    body: `Hamilton has provided continuous support to the Teenage Cancer Trust through advocacy, fundraising, and the provision of Walton Castle as an event venue for high-profile charitable launches.
+
+The focus of this engagement is specific and urgent: ensuring that teenagers and young adults with advanced-stage (Level 4) cancer receive specialist care in dedicated units — not placed in general population wards alongside elderly or end-of-life patients. This distinction is both clinical and humanitarian: specialist teenage cancer units deliver significantly improved psychological outcomes, age-appropriate care environments, and meaningful peer support networks.
+
+A notable milestone was the Teenage Cancer Trust South West appeal launch held at Walton Castle in Clevedon, attended by comedian Bill Bailey and generating significant regional support for the campaign to raise £1 million to build a specialist teenage cancer unit in Bristol.
+
+This philanthropic engagement reflects Hamilton's broader conviction that personal networks, premium venues, and high-profile advocacy should be deployed in direct service of life-improving outcomes — not only institutional or geopolitical objectives.`,
+    metrics: [
+      { value: "£1M", label: "Bristol Appeal Target" },
+      { value: "Walton Castle", label: "Fundraising Venue" },
+      { value: "Level 4", label: "Patient Advocacy" },
+    ],
+  },
 ];
 
 export default function Initiatives() {
@@ -164,7 +210,7 @@ export default function Initiatives() {
         </FadeIn>
         <FadeIn delay={0.2} className="max-w-2xl">
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Seven strategic initiatives operating across environmental, technological, humanitarian,
+            Nine strategic initiatives operating across environmental, technological, humanitarian,
             and geopolitical domains — each designed to address a systemic challenge at scale.
             Headquartered at Walton Castle, coordinated globally.
           </p>
@@ -172,7 +218,7 @@ export default function Initiatives() {
 
         {/* Quick links */}
         <FadeIn delay={0.3} className="mt-8 flex flex-wrap gap-3">
-          {["Nexergy", "Vectorcide", "Planetary X", "Africa Strategy", "TechnoImaging", "Planetary Green"].map((label, i) => (
+          {["Nexergy", "Vectorcide", "Planetary X", "Africa Strategy", "TechnoImaging", "Planetary Green", "AI Diagnostics", "Basalt / ESG", "Cancer Trust"].map((label, i) => (
             <span key={i} className="font-mono text-[9px] uppercase tracking-widest border border-border px-3 py-1.5 text-muted-foreground hover:border-gold/40 hover:text-gold transition-colors duration-300 cursor-default">
               {String(i + 1).padStart(2, "0")} · {label}
             </span>
@@ -249,6 +295,18 @@ export default function Initiatives() {
                         {para}
                       </p>
                     ))}
+                    {item.id === "09" && (
+                      <figure className="mt-6 border border-border overflow-hidden">
+                        <img
+                          src={tctImage}
+                          alt="Bill Bailey and Rai Hamilton at Teenage Cancer Trust South West appeal launch, Walton Castle"
+                          className="w-full object-cover max-h-64"
+                        />
+                        <figcaption className="px-4 py-3 font-mono text-[8px] text-muted-foreground/50 uppercase tracking-widest bg-card">
+                          Above: Bill Bailey and Rai Hamilton · Below: Igraine, Rai and Margarita Hamilton — TCT South West Appeal Launch, Walton Castle
+                        </figcaption>
+                      </figure>
+                    )}
                   </div>
                 </div>
               </div>
