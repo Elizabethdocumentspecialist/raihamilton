@@ -218,7 +218,7 @@ export default function Initiatives() {
 
         {/* Quick links */}
         <FadeIn delay={0.3} className="mt-8 flex flex-wrap gap-3">
-          {["Nexergy", "Vectorcide", "Planetary X", "Africa Strategy", "TechnoImaging", "Planetary Green"].map((label, i) => (
+          {["Nexergy", "Vectorcide", "Planetary X", "Africa Strategy", "TechnoImaging", "Planetary Green", "AI Diagnostics", "Basalt / ESG", "Cancer Trust"].map((label, i) => (
             <span key={i} className="font-mono text-[9px] uppercase tracking-widest border border-border px-3 py-1.5 text-muted-foreground hover:border-gold/40 hover:text-gold transition-colors duration-300 cursor-default">
               {String(i + 1).padStart(2, "0")} · {label}
             </span>
@@ -295,6 +295,18 @@ export default function Initiatives() {
                         {para}
                       </p>
                     ))}
+                    {item.id === "09" && (
+                      <figure className="mt-6 border border-border overflow-hidden">
+                        <img
+                          src={tctImage}
+                          alt="Bill Bailey and Rai Hamilton at Teenage Cancer Trust South West appeal launch, Walton Castle"
+                          className="w-full object-cover max-h-64"
+                        />
+                        <figcaption className="px-4 py-3 font-mono text-[8px] text-muted-foreground/50 uppercase tracking-widest bg-card">
+                          Above: Bill Bailey and Rai Hamilton · Below: Igraine, Rai and Margarita Hamilton — TCT South West Appeal Launch, Walton Castle
+                        </figcaption>
+                      </figure>
+                    )}
                   </div>
                 </div>
               </div>
