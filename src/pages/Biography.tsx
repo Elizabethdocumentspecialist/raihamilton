@@ -140,12 +140,13 @@ export default function Biography() {
                     <FadeIn delay={0.2} className="mt-8">
                       <figure>
                         <div className="relative border border-border overflow-hidden">
-                          <img
-                            src={chapter.image}
-                            alt={chapter.imageCaption}
-                            className="w-full object-cover max-h-80"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                           <img
+                             src={chapter.image}
+                             alt={chapter.imageCaption}
+                             className="w-full object-contain object-top bg-black/10"
+                             style={{ maxHeight: "480px" }}
+                           />
+                           <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
                         </div>
                         {chapter.imageCaption && (
                           <figcaption className="mt-3 font-mono text-[9px] text-muted-foreground/50 uppercase tracking-widest">
