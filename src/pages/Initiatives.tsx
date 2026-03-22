@@ -2,8 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, Zap, Shield, Leaf, Globe, Satellite, BarChart3 } from "lucide-react";
+import { ArrowRight, Zap, Shield, Leaf, Globe, Satellite, BarChart3, Building2, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import tctImage from "@/assets/tct-walton-castle.jpg";
 
 const initiatives = [
   {
