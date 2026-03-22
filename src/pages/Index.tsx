@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users, ExternalLink } from "lucide-react";
+import { ArrowRight, Globe, Satellite, Leaf, Shield, Brain, Zap, TrendingUp, Users, ExternalLink, Building2, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,6 +9,7 @@ import FadeIn from "@/components/FadeIn";
 import raiPortrait from "@/assets/rai-portrait.png";
 import waltonCastle from "@/assets/walton-castle.jpg";
 import raiBhutan from "@/assets/rai-bhutan.jpg";
+import tctImage from "@/assets/tct-walton-castle.jpg";
 
 const easing = [0.16, 1, 0.3, 1];
 
