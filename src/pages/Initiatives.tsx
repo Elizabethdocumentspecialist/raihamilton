@@ -210,7 +210,7 @@ export default function Initiatives() {
         </FadeIn>
         <FadeIn delay={0.2} className="max-w-2xl">
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Seven strategic initiatives operating across environmental, technological, humanitarian,
+            Nine strategic initiatives operating across environmental, technological, humanitarian,
             and geopolitical domains — each designed to address a systemic challenge at scale.
             Headquartered at Walton Castle, coordinated globally.
           </p>
