@@ -57,6 +57,18 @@ const strategicAchievements = [
     body: "Trustee of the Gates-sponsored Millennium Health Foundation — now Planetary Green — focused on environmental surveillance, carbon accountability via space satellite, and protection of global rainforest biodiversity.",
     metric: "Charity No. 1119453",
   },
+  {
+    tag: "ESG / Materials",
+    title: "Basalt Innovation",
+    body: "Led a two-year collaboration with Georgian patent holders and German industrial partners to advance basalt as a next-generation construction material — delivering zero CO₂ emissions, superior strength, and reduced cost versus steel.",
+    metric: "Zero CO₂ vs Steel",
+  },
+  {
+    tag: "Philanthropy",
+    title: "Teenage Cancer Trust",
+    body: "Ongoing support for the Teenage Cancer Trust, including hosting the South West appeal launch at Walton Castle. Advocates for specialist care units ensuring young patients with advanced cancer are not placed in general wards.",
+    metric: "TCT · Walton Castle",
+  },
 ];
 
 const focusDomains = [
